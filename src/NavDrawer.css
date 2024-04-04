@@ -1,0 +1,45 @@
+.nav-drawer {
+    width: 360px;
+    min-height: 100vh;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #f9faef;
+}
+
+.headline {
+    height: 56px;
+    width: 336px;
+    position: relative;
+    left: 12px;
+    top: 12px;
+    color: #44493d;
+}
+
+.title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    width: fit-content;
+    line-height: 20px;
+    position: absolute;
+    left: 16px;
+    top: 18px;
+}
+
+.icon {
+    position: absolute;
+    left: 16px;
+    top: 16px;  
+    width: 24px;
+    height: 24px; 
+}
+
+.nav-item-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: bolder;
+    line-height: 20px;
+    width: fit-content;
+    position: absolute;
+    left: 52px;
+    top: 18px;
+}

@@ -1,23 +1,19 @@
 import logo from './logo.svg';
+import './reset.css';
 import './App.css';
+import { NavDrawer } from './NavDrawer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <NavDrawer />
+      <div className='main-content'>
+        <div className='welcome'>
+          <p className='welcome-text'>Jammming</p>
+        </div>
+        <p className='powered-by-text'>Powered by:</p>
+        <div className='spotify-icon'></div>
+      </div>
     </div>
   );
 }
