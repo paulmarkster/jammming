@@ -1,0 +1,27 @@
+.nav-item {
+    height: 56px;
+    width: 336px;
+    position: relative;
+    left: 12px;
+    top: 12px;
+    color: #44493d;
+}
+
+.nav-item-icon {
+    position: absolute;
+    left: 16px;
+    top: 16px;  
+    width: 24px;
+    height: 24px; 
+}
+
+.nav-item-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: bolder;
+    line-height: 20px;
+    width: fit-content;
+    position: absolute;
+    left: 52px;
+    top: 18px;
+}
