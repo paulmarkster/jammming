@@ -1,7 +1,10 @@
 .nav-drawer {
-    width: 360px;
+    min-width: 360px;
     min-height: 100vh;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    background-color: #f9faef;
+}
+
+.nav-drawer-inner {
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 12px;
 }
