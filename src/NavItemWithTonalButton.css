@@ -1,0 +1,9 @@
+.nav-item-with-tonal-button {
+    display: flex;
+}
+
+.nav-item-tonal-button {
+    margin-top: 8px;
+    position: relative;
+    right: 24px;
+}

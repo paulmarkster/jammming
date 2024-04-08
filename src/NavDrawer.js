@@ -8,6 +8,7 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline'
 import NavHeader from './NavHeader';
 import NavItem from './NavItem';
 import NavDivider from './NavDivider';
+import NavItemWithTonalButton from './NavItemWithTonalButton';
 
 export function NavDrawer() {
     return (
@@ -19,10 +20,10 @@ export function NavDrawer() {
                 <NavItem icon={<RadioIcon />} text='Music Player' />  
                 <NavDivider />
                 <NavHeader text= 'Appearance' />
-                <NavItem icon={<QueueMusicIcon />} text='Queue' />
+                <NavItemWithTonalButton icon={<QueueMusicIcon />} text='Queue' buttonText='Show' />
                 <NavDivider />
                 <NavHeader text='Settings' />
-                <NavItem icon={<PersonOutlineIcon />} text='<User>' />
+                <NavItemWithTonalButton icon={<PersonOutlineIcon />} text='<Username>' buttonText='Login' />
             </div>                      
         </div>
     );

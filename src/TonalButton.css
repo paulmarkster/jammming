@@ -1,0 +1,9 @@
+.tonal-button {
+    height: 40px;
+    width: fit-content;
+    padding: 0px 24px;
+    border-radius: 20px;
+    background-color: #dbe7c8;
+    color: #151e0b;
+    border: none;
+}
