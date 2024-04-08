@@ -1,14 +1,14 @@
 import React from 'react';
 import './NavItemWithTonalButton.css';
 import NavItem from './NavItem';
-import TonalButton from './TonalButton';
+import Button from './Button';
 
-export default function NavItemWithTonalButton({icon, text, buttonText}) {
+export default function NavItemWithTonalButton({icon, text, buttonStyle, buttonText}) {
     return (
-        <div className='nav-item-with-tonal-button'>
+        <div className='nav-item-with-button'>
             <NavItem icon={icon} text={text} />
-            <div className='nav-item-tonal-button'>
-                <TonalButton text={buttonText} />
+            <div className='nav-item-button'>
+                <Button buttonStyle={buttonStyle} buttonText={buttonText} />
             </div>
         </div>
     );

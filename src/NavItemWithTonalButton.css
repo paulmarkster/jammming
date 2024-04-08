@@ -1,8 +1,8 @@
-.nav-item-with-tonal-button {
+.nav-item-with-button {
     display: flex;
 }
 
-.nav-item-tonal-button {
+.nav-item-button {
     margin-top: 8px;
     position: relative;
     right: 24px;

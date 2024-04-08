@@ -14,16 +14,16 @@ export function NavDrawer() {
     return (
         <div className='nav-drawer'>
             <div className='nav-drawer-inner'>
-                <NavHeader text='Pages' />
+                <NavHeader text='Views' />
                 <NavItem icon={<HomeOutlinedIcon />} text='Welcome' />
                 <NavItem icon={<AddToQueueIcon />} text='Add to Queue' />
                 <NavItem icon={<RadioIcon />} text='Music Player' />  
                 <NavDivider />
                 <NavHeader text= 'Appearance' />
-                <NavItemWithTonalButton icon={<QueueMusicIcon />} text='Queue' buttonText='Show' />
+                <NavItemWithTonalButton icon={<QueueMusicIcon />} text='Queue' buttonStyle='tonal' buttonText='Show' />
                 <NavDivider />
                 <NavHeader text='Settings' />
-                <NavItemWithTonalButton icon={<PersonOutlineIcon />} text='<Username>' buttonText='Login' />
+                <NavItemWithTonalButton icon={<PersonOutlineIcon />} text='<Username>' buttonStyle='filled' buttonText='Login' />
             </div>                      
         </div>
     );
