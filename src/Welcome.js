@@ -7,8 +7,10 @@ export function Welcome() {
             <div className='welcome'>
                 <p className='welcome-text'>Jammming</p>
             </div>
-            <p className='powered-by-text'>Powered by:</p>
-            <div className='spotify-icon'></div>
+            <div className='powered-by'>
+                <p className='powered-by-text'>Powered by:</p>
+                <div className='spotify-icon'></div>
+            </div>
         </div>
     );
 }

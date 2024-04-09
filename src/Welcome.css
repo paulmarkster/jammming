@@ -1,20 +1,17 @@
 .main-content {
-    width: 100%;
+    width: calc(100vw - 360px);
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
   
   .welcome {
-    width: 1280px;
-    height: 480px;
-    margin-top: 75px;
+    width: calc(100vw - 360px);
+    height: 100vh;
     background-image: url('./ries-bosch-q1cRvBSvw3M-unsplash.jpg');
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
   }
   
   .welcome-text {
@@ -23,17 +20,25 @@
     font-size: 150px;
     -webkit-text-stroke: 5px black;
   }
+
+  .powered-by {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 10px;
+    right: 30px;
+  }
   
   .powered-by-text {
     font-family: 'Roboto';
-    font-size: 48px;
-    margin-top: 75px;
+    font-size: 24px;
+
   }
   
   .spotify-icon {
-    margin-top: 40px;
-    width: 420px;
-    height: 125px;
+    width: 150px;
+    height: 44px;
+    margin-left: 15px;
     background-image: url('./Spotify_Logo_RGB_Green.png');
     background-size: cover;
   }
