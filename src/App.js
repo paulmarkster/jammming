@@ -1,29 +1,23 @@
 import './App.css';
-import { React, useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { NavDrawer } from './NavDrawer';
 import { Welcome } from './Welcome';
 import { PlaceholderDeveloper } from './PlaceholderDeveloper';
 import { PlaceholderManager } from './PlaceholderManager';
 
-function App() {
-
-  const [activeView, setActiveView] = useState('Music Player');
-
-  let renderView;
-  if (activeView === 'Welcome') {
-    renderView = ( <Welcome /> );
-  } else if (activeView === 'Add to Queue') {
-    renderView = ( <PlaceholderDeveloper /> );
-  } else if (activeView === 'Music Player') {
-    renderView = ( <PlaceholderManager /> );
-  };
+export default function App() {
 
   return (
     <div className='app'>
-      <NavDrawer currentView={activeView} setView={setActiveView} />
-      {renderView}
+      <Router>
+        <NavDrawer />
+        <Routes>
+            <Route exact path='Welcome' element={<Welcome />} />
+            <Route exact path='Add to Queue' element={<PlaceholderDeveloper />} />
+            <Route exact path='Music Player' element={<PlaceholderManager />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
-
-export default App;
