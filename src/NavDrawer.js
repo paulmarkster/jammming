@@ -6,24 +6,26 @@ import QueueMusicIcon from '@mui/icons-material/QueueMusic';
 import AddToQueueIcon from '@mui/icons-material/AddToQueue'
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline'
 import NavHeader from './NavHeader';
-import NavItem from './NavItem';
+import NavItemWelcome from './NavItemWelcome';
+import NavItemAddToQueue from './NavItemAddToQueue';
+import NavItemMusicPlayer from './NavItemMusicPlayer';
 import NavDivider from './NavDivider';
-import NavItemWithTonalButton from './NavItemWithTonalButton';
+import NavItemWithButton from './NavItemWithButton';
 
-export function NavDrawer() {
+export function NavDrawer({ currentView, setView }) {
     return (
         <div className='nav-drawer'>
             <div className='nav-drawer-inner'>
                 <NavHeader text='Views' />
-                <NavItem icon={<HomeOutlinedIcon />} text='Welcome' />
-                <NavItem icon={<AddToQueueIcon />} text='Add to Queue' />
-                <NavItem icon={<RadioIcon />} text='Music Player' />  
+                <NavItemWelcome icon={<HomeOutlinedIcon />} text='Welcome' currentView={currentView} setView={setView} />
+                <NavItemAddToQueue icon={<AddToQueueIcon />} text='Add to Queue' currentView={currentView} setView={setView} />
+                <NavItemMusicPlayer icon={<RadioIcon />} text='Music Player' currentView={currentView} setView={setView} />  
                 <NavDivider />
                 <NavHeader text= 'Appearance' />
-                <NavItemWithTonalButton icon={<QueueMusicIcon />} text='Queue' buttonStyle='tonal' buttonText='Show' />
+                <NavItemWithButton icon={<QueueMusicIcon />} text='Queue' buttonStyle='tonal' buttonText='Show' />
                 <NavDivider />
                 <NavHeader text='Settings' />
-                <NavItemWithTonalButton icon={<PersonOutlineIcon />} text='<Username>' buttonStyle='filled' buttonText='Login' />
+                <NavItemWithButton icon={<PersonOutlineIcon />} text='<No active user>' buttonStyle='filled' buttonText='Login' />
             </div>                      
         </div>
     );
