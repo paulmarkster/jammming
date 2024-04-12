@@ -1,10 +1,10 @@
 import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { NavDrawer } from './NavDrawer';
-import { Welcome } from './Welcome';
-import { PlaceholderDeveloper } from './PlaceholderDeveloper';
-import { PlaceholderManager } from './PlaceholderManager';
+import { NavDrawer } from './navdrawer/NavDrawer';
+import { Welcome } from './pages/Welcome';
+import { PlaceholderDeveloper } from './pages/PlaceholderDeveloper';
+import { PlaceholderManager } from './pages/PlaceholderManager';
 
 export default function App() {
 

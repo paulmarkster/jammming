@@ -2,7 +2,7 @@ import React from 'react';
 import './NavItem.css';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 
-export default function NavItem({currentView, setView}) {
+export default function NavItemWelcome({currentView, setView}) {
 
     const viewColor = (currentView === 'Welcome') ? {backgroundColor: '#dbe7c8'} : {backgroundColor: '#f9faef'};
 
