@@ -1,0 +1,16 @@
+.nav-item-with-button {
+    display: flex;
+}
+
+.nav-item-button {
+    margin-top: 8px;
+    position: relative;
+    right: 24px;
+    height: 40px;
+    width: fit-content;
+    padding: 0px 24px;
+    border-radius: 20px;
+    border: none;
+    color: #151e0b;
+    background-color: #dbe7c8;
+}

@@ -13,9 +13,9 @@ export default function App() {
       <Router>
         <NavDrawer />
         <Routes>
-            <Route exact path='Welcome' element={<Welcome />} />
-            <Route exact path='Add to Queue' element={<PlaceholderDeveloper />} />
-            <Route exact path='Music Player' element={<PlaceholderManager />} />
+            <Route exact path='/' element={<Welcome />} />
+            <Route exact path='AddtoQueue' element={<PlaceholderDeveloper />} />
+            <Route exact path='MusicPlayer' element={<PlaceholderManager />} />
         </Routes>
       </Router>
     </div>

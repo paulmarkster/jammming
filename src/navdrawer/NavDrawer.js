@@ -8,7 +8,8 @@ import NavItemWelcome from './NavItemWelcome';
 import NavItemAddToQueue from './NavItemAddToQueue';
 import NavItemMusicPlayer from './NavItemMusicPlayer';
 import NavDivider from './NavDivider';
-import NavItemWithButton from './NavItemWithButton';
+import NavItemLogin from './NavItemLogin';
+import NavItemShowQueue from './NavItemShowQueue';
 
 export function NavDrawer() {
 
@@ -17,16 +18,16 @@ export function NavDrawer() {
     return (
         <div className='nav-drawer'>
             <div className='nav-drawer-inner'>
-                <NavHeader text='Features' />
-                <Link to='Welcome'><NavItemWelcome currentView={activeView} setView={setActiveView} /></Link>
-                <Link to='Add to Queue'><NavItemAddToQueue currentView={activeView} setView={setActiveView} /></Link>
-                <Link to='Music Player'><NavItemMusicPlayer currentView={activeView} setView={setActiveView} /></Link>  
+                <NavHeader text='Pages' />
+                <Link to='/'><NavItemWelcome currentView={activeView} setView={setActiveView} /></Link>
+                <Link to='AddtoQueue'><NavItemAddToQueue currentView={activeView} setView={setActiveView} /></Link>
+                <Link to='MusicPlayer'><NavItemMusicPlayer currentView={activeView} setView={setActiveView} /></Link>  
                 <NavDivider />
                 <NavHeader text= 'Appearance' />
-                <NavItemWithButton icon={<QueueMusicIcon />} text='Queue' buttonStyle='tonal' buttonText='Show' />
+                <NavItemShowQueue icon={<QueueMusicIcon />} text='Queue' />
                 <NavDivider />
                 <NavHeader text='Settings' />
-                <NavItemWithButton icon={<PersonOutlineIcon />} text='<No active user>' buttonStyle='filled' buttonText='Login' />
+                <NavItemLogin icon={<PersonOutlineIcon />} text='<No active user>' />
             </div>                      
         </div>
     );
