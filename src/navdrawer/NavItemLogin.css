@@ -1,5 +1,26 @@
 #nav-item-login {
+    height: 56px;
+    border-radius: 28px;
     display: flex;
+}
+
+#login-nav-item-icon {
+    width: 24px;
+    height: 24px; 
+    padding-left: 16px;
+    padding-top: 16px;
+}
+
+#login-nav-item-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    padding-top: 18px;
+    padding-left: 12px;
+    color: #44493d;
+    font-weight: bolder;
+    line-height: 20px;
+    width: 100%;
 }
 
 #login-button {

@@ -27,7 +27,7 @@ export function NavDrawer() {
                 <NavItemShowQueue icon={<QueueMusicIcon />} text='Queue' />
                 <NavDivider />
                 <NavHeader text='Settings' />
-                <NavItemLogin icon={<PersonOutlineIcon />} text='<No active user>' />
+                <NavItemLogin icon={<PersonOutlineIcon />} text='<No active user>' currentView={activeView} setView={setActiveView} />
             </div>                      
         </div>
     );

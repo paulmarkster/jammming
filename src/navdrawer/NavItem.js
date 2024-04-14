@@ -1,7 +1,7 @@
 import React from 'react';
 import './NavItem.css';
 
-export default function NavItem({icon, text, currentView, setView}) {
+export default function NavItem({icon, text, currentView}) {
 
     const viewColor = (text === currentView) ? {backgroundColor: '#dbe7c8'} : {backgroundColor: '#f9faef'};
 
