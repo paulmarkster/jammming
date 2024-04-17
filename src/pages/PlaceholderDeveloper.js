@@ -1,7 +1,7 @@
 import React from 'react';
 import './Placeholder.css';
 
-export function PlaceholderDeveloper() {
+export default function PlaceholderDeveloper() {
     return (
         <div className='content'>
             <img className='image' src={require('./SWDeveloper.jpg')} alt='Crazed developer' />

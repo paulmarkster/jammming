@@ -1,7 +1,7 @@
 import React from 'react';
 import './Welcome.css';
 
-export function Welcome() {
+export default function Welcome() {
     return (
         <div className='main-content'>
             <div className='welcome'>

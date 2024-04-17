@@ -1,8 +1,7 @@
-import { React, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './NavDrawer.css';
 import QueueMusicIcon from '@mui/icons-material/QueueMusic';
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import NavHeader from './NavHeader';
 import NavItemWelcome from './NavItemWelcome';
 import NavItemAddToQueue from './NavItemAddToQueue';
@@ -11,7 +10,7 @@ import NavDivider from './NavDivider';
 import NavItemLogin from './NavItemLogin';
 import NavItemShowQueue from './NavItemShowQueue';
 
-export function NavDrawer() {
+export default function NavDrawer() {   
 
     const [activeView, setActiveView] = useState('Welcome');
 
@@ -27,7 +26,7 @@ export function NavDrawer() {
                 <NavItemShowQueue icon={<QueueMusicIcon />} text='Queue' />
                 <NavDivider />
                 <NavHeader text='Settings' />
-                <NavItemLogin icon={<PersonOutlineIcon />} text='<No active user>' currentView={activeView} setView={setActiveView} />
+                <NavItemLogin currentView={activeView} setView={setActiveView} />
             </div>                      
         </div>
     );

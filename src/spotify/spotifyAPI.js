@@ -1,6 +1,8 @@
+
+
 /* For more information, read
  * https://developer.spotify.com/documentation/web-api/tutorials/client-credentials-flow
- */
+ 
 
 let clientId; 
 let clientSecret;
@@ -38,13 +40,12 @@ async function artistSearch(access_token) {
     return await response.json();
 }
 
-/*
 getToken().then(response => {
   getTrackInfo(response.access_token).then(profile => {
     console.log(profile)
   })
 });
-*/
+
 
 if (clientId && clientSecret) {
   getToken().then(response => {
@@ -55,3 +56,4 @@ if (clientId && clientSecret) {
 } else {
   console.log('No client id or client secret provided.');
 }
+*/
