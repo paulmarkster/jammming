@@ -57,3 +57,13 @@ if (clientId && clientSecret) {
   console.log('No client id or client secret provided.');
 }
 */
+
+export async function getProfile() {
+  const accessToken = sessionStorage.getItem('access_token'); 
+  const response = await fetch('https://api.spotify.com/v1/me', {
+    method: 'GET',
+    headers: { 'Authorization': 'Bearer ' + accessToken }
+  });
+
+  return await response.json();
+}

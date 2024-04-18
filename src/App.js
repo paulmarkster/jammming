@@ -1,18 +1,21 @@
-import React from 'react';
+import { React, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import NavDrawer from './navdrawer/NavDrawer';
-import Welcome from './pages/Welcome';
-import PlaceholderDeveloper from './pages/PlaceholderDeveloper';
-import PlaceholderManager from './pages/PlaceholderManager';
-import Login from './pages/Login';
+import Welcome from './page-welcome/Welcome';
+import PlaceholderDeveloper from './pages-temp/PlaceholderDeveloper';
+import PlaceholderManager from './pages-temp/PlaceholderManager';
+import Login from './page-login/Login';
 
 export default function App() {
+
+  const [loginStatus, setLoginStatus] = useState('Logged Out');
+  const [activeView, setActiveView] = useState('Welcome');
     
   return (
     <div className='app'>
       <Router>
-        <NavDrawer />
+        <NavDrawer loginStatus={loginStatus} currentView={activeView} setView={setActiveView} />
         <Routes>
             <Route 
               exact path='/' 
@@ -28,7 +31,7 @@ export default function App() {
             />
             <Route 
               exact path='Login' 
-              element={<Login />} 
+              element={<Login loginStatus={loginStatus} setLoginStatus={setLoginStatus} setView={setActiveView} />} 
             />
         </Routes>
       </Router>

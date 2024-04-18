@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { getAuth, getTokens } from '../spotify/spotifyOAuth';
+import { getProfile } from '../spotify/spotifyAPI';
 import './Login.css';
 
-export default function Login() {
+export default function Login({loginStatus, setLoginStatus, setView}) {
     const [parms, setParms] = useState({});
 
     // Check if the URL includes a Spotify callback query string in response to an authorization request.
@@ -17,7 +18,15 @@ export default function Login() {
 
     // Initiate a token request if the query string does contain a Spotify callback query string.
     if (code) {
-        getTokens(code);
+        getTokens(code).then(() => {
+            getProfile().then((profile) => {
+                sessionStorage.setItem('user_name', profile.display_name);
+                setLoginStatus('Logged In');
+
+                // Ensure view state is 'Login' given OAuth redirected here.
+                setView('Login')
+            });
+        });
     };
 
     const handleChange = ({ target }) => {
@@ -26,16 +35,17 @@ export default function Login() {
     };
 
     const handleSubmit = () => {
-        localStorage.setItem('client_id', parms.clientId)
+        sessionStorage.setItem('client_id', parms.clientId)
         getAuth();
     };
 
-    return (
-        <div id='login-content'>
-            <div id='login-container'>
-                <h2>Enter User Credentials</h2>
-                <form className='login-client-input'>
-                    <label>Client id: </label>
+    let pageContent;
+    if (loginStatus === 'Logged Out') {
+        pageContent = (
+            <div>
+                <h2>Jammming App Developer</h2>
+                <form id='login-client-input'>
+                    <label>Developer id: </label>
                     <input 
                         type='text' 
                         name='clientId'
@@ -44,8 +54,22 @@ export default function Login() {
                         onChange={handleChange}
                     />
                 </form>
-
                 <button onClick={handleSubmit} type="submit">Submit</button>
+            </div>
+        )
+    } else {
+        pageContent = (
+            <div>
+                <h3>Authorization completed!</h3>
+                <p>Select a page in the navigation drawer to continue.</p>
+            </div>
+        )
+    }
+
+    return (
+        <div id='login-content'>
+            <div id='login-container'>
+                { pageContent }
             </div>
         </div>
     );

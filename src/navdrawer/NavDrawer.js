@@ -10,23 +10,23 @@ import NavDivider from './NavDivider';
 import NavItemLogin from './NavItemLogin';
 import NavItemShowQueue from './NavItemShowQueue';
 
-export default function NavDrawer() {   
+export default function NavDrawer({loginStatus, currentView, setView}) {   
 
-    const [activeView, setActiveView] = useState('Welcome');
+
 
     return (
         <div className='nav-drawer'>
             <div className='nav-drawer-inner'>
                 <NavHeader text='Pages' />
-                <Link to='/'><NavItemWelcome currentView={activeView} setView={setActiveView} /></Link>
-                <Link to='AddtoQueue'><NavItemAddToQueue currentView={activeView} setView={setActiveView} /></Link>
-                <Link to='MusicPlayer'><NavItemMusicPlayer currentView={activeView} setView={setActiveView} /></Link>  
+                <Link to='/'><NavItemWelcome currentView={currentView} setView={setView} /></Link>
+                <Link to='AddtoQueue'><NavItemAddToQueue currentView={currentView} setView={setView} /></Link>
+                <Link to='MusicPlayer'><NavItemMusicPlayer currentView={currentView} setView={setView} /></Link>  
                 <NavDivider />
                 <NavHeader text= 'Appearance' />
                 <NavItemShowQueue icon={<QueueMusicIcon />} text='Queue' />
                 <NavDivider />
                 <NavHeader text='Settings' />
-                <NavItemLogin currentView={activeView} setView={setActiveView} />
+                <NavItemLogin setView={setView} loginStatus={loginStatus} />
             </div>                      
         </div>
     );

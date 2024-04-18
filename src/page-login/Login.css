@@ -1,3 +1,5 @@
+/* This section is common to both the pre and post authorization layouts. */
+
 #login-content {
     width: calc(100vw - 360px);
     height: 100vh;
@@ -13,26 +15,28 @@
     text-align: center;
 }
 
+/* This section is specific to the pre-authorization layout. */
+
 #login-content h2 {
     font-size: 36px;
     color: white;
     margin: 100px 0;
 }
 
-.login-client-input {
+#login-client-input {
     font-size: 30px;
     color: white;
     text-align: left;
     margin-bottom: 75px;
 }
 
-.login-client-input label {
+#login-client-input label {
     margin-bottom: 10px;
     text-align: left;
     display: block;
 }
 
-.login-client-input input {
+#login-client-input input {
     font-size: 30px;
     color: black;
     width: 100%;
@@ -49,4 +53,17 @@
     background-color: #dbe7c8;
     margin-top: 40px;
     cursor: pointer;
+}
+
+/* This section is specific to the post-authorization layout. */
+
+#login-container h3 {
+    font-size: 24px;
+    color: white;
+    margin: 100px 0;
+}
+
+#login-container p {
+    font-size: 20px;
+    color: white;
 }
