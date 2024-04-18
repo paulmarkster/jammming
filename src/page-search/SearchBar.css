@@ -1,0 +1,27 @@
+#searchbar {
+    height: 56px;
+    width: 720px;
+    background-color: #f9faef;
+    border-radius: 28px;
+    margin-top: 24px;
+    margin-left: 36px;
+    display: flex;
+}
+
+#searchbar-icon {
+    width: 24px;
+    height: 24px; 
+    padding-left: 16px;
+    padding-top: 16px;
+}
+
+#searchbar-input {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    padding-left: 12px;
+    background-color: #f9faef;
+    color: gray;
+    width: fit-content;
+    border: none;
+}

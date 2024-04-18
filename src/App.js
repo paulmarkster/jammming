@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import NavDrawer from './navdrawer/NavDrawer';
 import Welcome from './page-welcome/Welcome';
-import PlaceholderDeveloper from './pages-temp/PlaceholderDeveloper';
 import PlaceholderManager from './pages-temp/PlaceholderManager';
 import Login from './page-login/Login';
+import Search from './page-search/Search';
 
 export default function App() {
 
@@ -23,7 +23,7 @@ export default function App() {
             />
             <Route 
               exact path='AddtoQueue' 
-              element={<PlaceholderDeveloper />} 
+              element={<Search />} 
             />
             <Route 
               exact path='MusicPlayer' 
