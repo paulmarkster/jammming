@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavDrawer.css';
 import QueueMusicIcon from '@mui/icons-material/QueueMusic';
@@ -25,7 +25,7 @@ export default function NavDrawer({loginStatus, currentView, setView}) {
                 <NavHeader text= 'Appearance' />
                 <NavItemShowQueue icon={<QueueMusicIcon />} text='Queue' />
                 <NavDivider />
-                <NavHeader text='Settings' />
+                <NavHeader text='Status' />
                 <NavItemLogin setView={setView} loginStatus={loginStatus} />
             </div>                      
         </div>

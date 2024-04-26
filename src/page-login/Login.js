@@ -8,11 +8,11 @@ export default function Login({loginStatus, setLoginStatus, setView}) {
 
   useEffect(() => {
 
-    // Check if the URL includes a Spotify callback query string in response to an authorization request.
+    // Check if the URL includes a Spotify query string in response to an authorization request.
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get('code');
 
-    // Initiate a token request if the query string does contain a Spotify callback query string.
+    // Initiate an access token request and a user profile request if query string is present.
     if (code) {
       getTokens(code).then(() => {
         getProfile().then((profile) => {
