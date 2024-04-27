@@ -24,10 +24,8 @@ export default function Search() {
 
         // Refresh tokens (only if required) and send search query to Spotify.
         getRefreshToken().then(() => {
-          console.log('Initiating a search...');
           spotifySearch(query).then((queryResponse) => {
             setQueryResult(queryResponse.tracks.items);
-            console.log(queryResult);
           });
         });
       } else {

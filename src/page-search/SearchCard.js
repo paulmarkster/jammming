@@ -3,8 +3,6 @@ import './SearchCard.css';
 
 export default function SearchCard({track}) {
 
-  console.log(track);
-
   return (
     <div id='search-card'>
         <img id='search-card-icon' src={track.album.images[2].url} alt='Album cover' />

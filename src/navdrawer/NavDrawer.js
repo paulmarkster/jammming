@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './NavDrawer.css';
 import QueueMusicIcon from '@mui/icons-material/QueueMusic';
@@ -10,23 +10,23 @@ import NavDivider from './NavDivider';
 import NavItemLogin from './NavItemLogin';
 import NavItemShowQueue from './NavItemShowQueue';
 
-export default function NavDrawer({loginStatus, currentView, setView}) {   
+export default function NavDrawer({user}) {   
 
-
+    const [activeView, setActiveView] = useState('Welcome');
 
     return (
         <div className='nav-drawer'>
             <div className='nav-drawer-inner'>
                 <NavHeader text='Pages' />
-                <Link to='/'><NavItemWelcome currentView={currentView} setView={setView} /></Link>
-                <Link to='AddtoQueue'><NavItemAddToQueue currentView={currentView} setView={setView} /></Link>
-                <Link to='MusicPlayer'><NavItemMusicPlayer currentView={currentView} setView={setView} /></Link>  
+                <Link to='/'><NavItemWelcome currentView={activeView} setView={setActiveView} /></Link>
+                <Link to='AddtoQueue'><NavItemAddToQueue currentView={activeView} setView={setActiveView} /></Link>
+                <Link to='MusicPlayer'><NavItemMusicPlayer currentView={activeView} setView={setActiveView} /></Link>  
                 <NavDivider />
                 <NavHeader text= 'Appearance' />
                 <NavItemShowQueue icon={<QueueMusicIcon />} text='Queue' />
                 <NavDivider />
-                <NavHeader text='Status' />
-                <NavItemLogin setView={setView} loginStatus={loginStatus} />
+                <NavHeader text='Spotify User' />
+                <NavItemLogin user={user} />
             </div>                      
         </div>
     );

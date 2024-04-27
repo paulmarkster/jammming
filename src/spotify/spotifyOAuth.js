@@ -27,7 +27,7 @@ export async function getAuth() {
   const hashed = await sha256(codeVerifier)
   const codeChallenge = base64encode(hashed);
   const clientId = sessionStorage.getItem('client_id');
-  const redirectUri = 'http://localhost:3000/Login';
+  const redirectUri = 'http://localhost:3000';
   const scope = 'user-read-private user-read-email';
   const authUrl = new URL("https://accounts.spotify.com/authorize")
   const params =  {
@@ -46,7 +46,7 @@ export async function getAuth() {
 
 export async function getTokens(code) {
   const clientId = sessionStorage.getItem('client_id');
-  const redirectUri = 'http://localhost:3000/Login';
+  const redirectUri = 'http://localhost:3000';
   
   // stored in the previous step
   const codeVerifier = sessionStorage.getItem('code_verifier');
