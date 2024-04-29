@@ -1,17 +1,17 @@
-#nav-item-login {
+.navitem {
     height: 56px;
     border-radius: 28px;
     display: flex;
 }
 
-#login-nav-item-icon {
+.icon {
     width: 24px;
     height: 24px; 
     padding-left: 16px;
     padding-top: 16px;
 }
 
-#login-nav-item-text {
+.text {
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     line-height: 20px;
@@ -23,7 +23,7 @@
     width: 100%;
 }
 
-#login-button {
+.button {
     margin-top: 8px;
     position: relative;
     right: 24px;
