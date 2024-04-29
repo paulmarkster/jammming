@@ -75,7 +75,7 @@ export async function getTokens(code) {
   sessionStorage.setItem('expires', new Date(now.getTime() + (expires_in * 1000)));
 }
 
-export async function getRefreshToken() {
+export async function getRefreshTokens() {
 
   const now = new Date().getTime();
   const expires = sessionStorage.getItem('expires');

@@ -3,7 +3,7 @@ import './Search.css';
 import SearchBar from './SearchBar';
 import SearchDivider from './SearchDivider';
 import SearchCard from './SearchCard';
-import { getRefreshToken } from '../spotify/spotifyOAuth';
+import { getRefreshTokens } from '../spotify/spotifyOAuth';
 import { spotifySearch } from '../spotify/spotifyAPI';
 
 export default function Search() {
@@ -23,7 +23,7 @@ export default function Search() {
       if (sessionStorage.getItem('client_id')) {
 
         // Refresh tokens (only if required) and send search query to Spotify.
-        getRefreshToken().then(() => {
+        getRefreshTokens().then(() => {
           spotifySearch(query).then((queryResponse) => {
             setQueryResult(queryResponse.tracks.items);
           });
