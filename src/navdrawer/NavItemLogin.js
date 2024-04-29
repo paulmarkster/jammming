@@ -1,28 +1,28 @@
 import React from 'react';
 import styles from './NavItemLogin.module.css';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
-import { getAuth } from '../spotify/spotifyOAuth';
+import NavItem from './NavItem';
 import setClientId from '../appClientId';
+import { getAuth } from '../spotify/spotifyOAuth';
 
 export default function NavItemLogin({user}) {
 
-const loggedOut = !sessionStorage.getItem('client_id') ? true : false;
-const buttonStyle = loggedOut ? {display: 'block'} : {display: 'none'};
+  const loggedOut = !sessionStorage.getItem('client_id') ? true : false;
+  const buttonStyle = loggedOut ? {display: 'block'} : {display: 'none'};
 
-const handleOnClick = () => {
+  const handleOnClick = () => {
 
-  // Initiate user authenication.
-  // Authorization continues on the Welcome page via a redirect url sent to the Spotify server from getAuth().
-  if (loggedOut) {
-    setClientId();
-    getAuth();
-  };
-}
+    // Initiate user authenication.
+    // Authorization continues on the Welcome page via a redirect url sent to the Spotify server from getAuth().
+    if (loggedOut) {
+      setClientId();
+      getAuth();
+    };
+  }
 
   return (
     <div className={styles.navitem}>
-      <p className={styles.icon}><PersonOutlineIcon /></p>
-      <p className={styles.text}>{user}</p>
+      <NavItem icon={<PersonOutlineIcon />} text={user} />
       <button type='button' className={styles.button} style={buttonStyle} onClick={handleOnClick}>Login</button>
     </div>
   );

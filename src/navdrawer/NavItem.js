@@ -1,14 +1,14 @@
 import React from 'react';
-import './NavItem.css';
+import styles from './NavItem.module.css';
 
-export default function NavItem({icon, text, currentView}) {
+export default function NavItem({icon, text, page}) {
 
-    const viewColor = (text === currentView) ? {backgroundColor: '#dbe7c8'} : {backgroundColor: '#f9faef'};
+    const viewColor = (text === page) ? {backgroundColor: '#dbe7c8'} : {backgroundColor: '#f9faef'};
 
     return (
-        <div className='nav-item' style={viewColor}>
-            <div className='nav-item-icon'>{icon}</div>
-            <div className='nav-item-text'>{text}</div>
+        <div className={styles.navitem} style={viewColor}>
+            <div className={styles.icon}>{icon}</div>
+            <div className={styles.text}>{text}</div>
         </div>
     );
 }

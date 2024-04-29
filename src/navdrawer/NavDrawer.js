@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './NavDrawer.css';
-import QueueMusicIcon from '@mui/icons-material/QueueMusic';
 import NavHeader from './NavHeader';
 import NavItemWelcome from './NavItemWelcome';
 import NavItemAddToQueue from './NavItemAddToQueue';
@@ -12,18 +11,19 @@ import NavItemShowQueue from './NavItemShowQueue';
 
 export default function NavDrawer({user}) {   
 
-    const [activeView, setActiveView] = useState('Welcome');
+    // This state determines background color for the linked page items in the nav drawer.
+    const [page, setPage] = useState('Welcome');
 
     return (
         <div className='nav-drawer'>
             <div className='nav-drawer-inner'>
                 <NavHeader text='Pages' />
-                <Link to='/'><NavItemWelcome currentView={activeView} setView={setActiveView} /></Link>
-                <Link to='AddtoQueue'><NavItemAddToQueue currentView={activeView} setView={setActiveView} /></Link>
-                <Link to='MusicPlayer'><NavItemMusicPlayer currentView={activeView} setView={setActiveView} /></Link>  
+                <Link to='/'><NavItemWelcome page={page} setPage={setPage} /></Link>
+                <Link to='AddtoQueue'><NavItemAddToQueue page={page} setPage={setPage} /></Link>
+                <Link to='MusicPlayer'><NavItemMusicPlayer page={page} setPage={setPage} /></Link>  
                 <NavDivider />
                 <NavHeader text= 'Appearance' />
-                <NavItemShowQueue icon={<QueueMusicIcon />} text='Queue' />
+                <NavItemShowQueue />
                 <NavDivider />
                 <NavHeader text='Spotify User' />
                 <NavItemLogin user={user} />

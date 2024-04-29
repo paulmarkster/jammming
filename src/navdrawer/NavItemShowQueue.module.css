@@ -1,8 +1,8 @@
-.nav-item-with-button {
+.navitem {
     display: flex;
 }
 
-.nav-item-button {
+.button {
     margin-top: 8px;
     position: relative;
     right: 24px;
@@ -13,4 +13,5 @@
     border: none;
     color: #151e0b;
     background-color: #dbe7c8;
+    cursor: pointer;
 }

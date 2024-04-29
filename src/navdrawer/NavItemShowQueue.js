@@ -1,14 +1,14 @@
 import React from 'react';
-import './NavItemShowQueue.css';
+import styles from './NavItemShowQueue.module.css';
 import NavItem from './NavItem';
+import QueueMusicIcon from '@mui/icons-material/QueueMusic';
 
-export default function NavItemShowQueue({icon, text}) {
+export default function NavItemShowQueue() {
 
-
-    return (
-        <div className='nav-item-with-button'>
-            <NavItem icon={icon} text={text} />
-            <button className='nav-item-button' type='button'>Show</button>
-        </div>
-    );
+  return (
+    <div className={styles.navitem}>
+      <NavItem icon={<QueueMusicIcon />} text={'Queue'} />
+      <button className={styles.button} type='button'>Show</button>
+    </div>
+  );
 }
