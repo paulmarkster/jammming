@@ -39,7 +39,7 @@ export default function Search() {
   }, [query, queryResult])
    
   return (
-    <div className={styles.main}>
+    <div className={styles.container}>
       <SearchBar setQuery={setQuery} />
       <SearchDivider />
       <div className={styles.search}>

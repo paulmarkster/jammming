@@ -5,9 +5,11 @@ import NavDrawer from './NavDrawer/NavDrawer';
 import Welcome from './Pages/Welcome/Welcome';
 import PlaceholderManager from './Pages/Player/PlaceholderManager';
 import Search from './Pages/Search/Search';
+import Queue from './QueueDrawer/Queue'
 
 export default function App() {
 
+  // User state allows the user name to be set on the Welcome page and displayed in the nav drawer.
   const [user, setUser] = useState('No active user');
 
   return (
@@ -26,8 +28,9 @@ export default function App() {
           <Route 
             exact path='MusicPlayer' 
             element={<PlaceholderManager />} 
-          />
+          />          
         </Routes>
+        <Queue />
       </Router>
     </div>
   );

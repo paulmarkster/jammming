@@ -32,13 +32,13 @@ export default function Welcome({setUser}) {
   });
 
   return (
-    <div className={styles.main}>
+    <div className={styles.container}>
       <div className={styles.welcome}>
         <p className={styles.welcometext}>Jammming</p>
-      </div>
-      <div className={styles.poweredby}>
-        <p className={styles.poweredbytext}>Powered by:</p>
-        <div className={styles.icon}></div>
+        <div className={styles.poweredby}>
+          <p className={styles.poweredbytext}>Powered by:</p>
+          <div className={styles.icon}></div>
+        </div>
       </div>
     </div>
   );

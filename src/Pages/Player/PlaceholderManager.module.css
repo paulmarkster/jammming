@@ -1,12 +1,11 @@
-.content {
-    width: calc(100vw - 360px);
-    height: 100vh;
+.container {
+    min-height: 100vh;
     background-color: #4b662c;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-
+    flex: auto;
   }
 
   .image {

@@ -1,11 +1,10 @@
-.main {
-    width: calc(100vw - 360px);
-    height: 100vh;
+.container {
+    min-height: 100vh;
     background-color: #4b662c;
+    flex: auto;
   }
   
 .search {
-    width: calc(100vw - 360px - 36px);
     height: fit-content;
     margin-top: 36px;
     margin-left: 36px;

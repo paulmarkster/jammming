@@ -1,17 +1,16 @@
-.main {
-  width: calc(100vw - 360px);
-  height: 100vh;
+.container {
+  min-height: 100vh;
+  flex:auto;
 }
   
 .welcome {
-  width: calc(100vw - 360px);
   height: 100vh;
   background-image: url('./ries-bosch-q1cRvBSvw3M-unsplash.jpg');
   background-size: cover;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
 }
   
 .welcometext {
@@ -22,17 +21,15 @@
 }
 
 .poweredby {
+  margin-top: 40px;
   display: flex;
   align-items: center;
-  position: absolute;
-  bottom: 10px;
-  right: 30px;
 }
 
 .poweredbytext {
   font-family: 'Roboto';
   font-size: 24px;
-
+  color: #1db954;
 }
 
 .icon {
