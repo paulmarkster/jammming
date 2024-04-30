@@ -1,6 +1,6 @@
 import React from 'react';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
-import NavItem from './NavItem';
+import NavItem from '../NavItem/NavItem';
 
 export default function NavItemWelcome({page, setPage}) {
 

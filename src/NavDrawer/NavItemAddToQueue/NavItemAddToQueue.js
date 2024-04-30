@@ -1,6 +1,6 @@
 import React from 'react';
 import AddToQueueIcon from '@mui/icons-material/AddToQueue';
-import NavItem from './NavItem';
+import NavItem from '../NavItem/NavItem';
 
 export default function NavItemAddToQueue({page, setPage}) {
 

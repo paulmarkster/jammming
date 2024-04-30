@@ -1,5 +1,5 @@
 import React from 'react';
-import './SearchBar.css';
+import styles from './SearchBar.module.css';
 import SearchIcon from '@mui/icons-material/Search';
 
 export default function SearchBar({setQuery}) {
@@ -13,9 +13,9 @@ export default function SearchBar({setQuery}) {
   }
 
   return (
-    <div id='searchbar'>
-      <div id='searchbar-icon'><SearchIcon /></div>
-      <input id='searchinput' placeholder='Enter Spotify search...' onKeyDown={handleSubmit} />
+    <div className={styles.searchbar}>
+      <div className={styles.icon}><SearchIcon /></div>
+      <input className={styles.input} placeholder='Enter Spotify search...' onKeyDown={handleSubmit} />
     </div>
   );
 }

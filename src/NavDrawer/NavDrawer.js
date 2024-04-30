@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './NavDrawer.css';
-import NavHeader from './NavHeader';
-import NavItemWelcome from './NavItemWelcome';
-import NavItemAddToQueue from './NavItemAddToQueue';
-import NavItemMusicPlayer from './NavItemMusicPlayer';
-import NavDivider from './NavDivider';
-import NavItemLogin from './NavItemLogin';
-import NavItemShowQueue from './NavItemShowQueue';
+import styles from './NavDrawer.module.css';
+import NavHeader from './NavHeader/NavHeader';
+import NavItemWelcome from './NavItemWelcome/NavItemWelcome';
+import NavItemAddToQueue from './NavItemAddToQueue/NavItemAddToQueue';
+import NavItemMusicPlayer from './NavItemMusicPlayer/NavItemMusicPlayer';
+import NavDivider from './NavDivider/NavDivider';
+import NavItemLogin from './NavItemLogin/NavItemLogin';
+import NavItemShowQueue from './NavItemShowQueue/NavItemShowQueue';
 
 export default function NavDrawer({user}) {   
 
@@ -15,8 +15,8 @@ export default function NavDrawer({user}) {
     const [page, setPage] = useState('Welcome');
 
     return (
-        <div className='nav-drawer'>
-            <div className='nav-drawer-inner'>
+        <div className={styles.navdrawer}>
+            <div className={styles.innernavdrawer}>
                 <NavHeader text='Pages' />
                 <Link to='/'><NavItemWelcome page={page} setPage={setPage} /></Link>
                 <Link to='AddtoQueue'><NavItemAddToQueue page={page} setPage={setPage} /></Link>

@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './NavItemLogin.module.css';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
-import NavItem from './NavItem';
-import setClientId from '../appClientId';
-import { getAuth } from '../spotify/spotifyOAuth';
+import NavItem from '../NavItem/NavItem';
+import setClientId from '../../appClientId';
+import { getAuth } from '../../Spotify/spotifyOAuth';
 
 export default function NavItemLogin({user}) {
 

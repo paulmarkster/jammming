@@ -1,10 +1,10 @@
 import { React, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import styles from './App.module.css';
-import NavDrawer from './navdrawer/NavDrawer';
-import Welcome from './page-welcome/Welcome';
-import PlaceholderManager from './pages-temp/PlaceholderManager';
-import Search from './page-search/Search';
+import NavDrawer from './NavDrawer/NavDrawer';
+import Welcome from './Pages/Welcome/Welcome';
+import PlaceholderManager from './Pages/Player/PlaceholderManager';
+import Search from './Pages/Search/Search';
 
 export default function App() {
 

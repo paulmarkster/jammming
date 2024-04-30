@@ -1,4 +1,4 @@
-#searchbar {
+.searchbar {
     height: 56px;
     width: 720px;
     background-color: #f9faef;
@@ -8,14 +8,14 @@
     display: flex;
 }
 
-#searchbar-icon {
+.icon {
     width: 24px;
     height: 24px; 
     padding-left: 16px;
     padding-top: 16px;
 }
 
-input {
+.input {
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     line-height: 20px;
@@ -26,6 +26,6 @@ input {
     border: none;
 }
 
-input:focus {
+.input:focus {
     outline: none;
 }

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import './Welcome.css';
-import { getTokens } from '../spotify/spotifyOAuth';
-import { getProfile } from '../spotify/spotifyAPI';
+import styles from './Welcome.module.css';
+import { getTokens } from '../../Spotify/spotifyOAuth';
+import { getProfile } from '../../Spotify/spotifyAPI';
 
 
 
@@ -32,13 +32,13 @@ export default function Welcome({setUser}) {
   });
 
   return (
-    <div className='main-content'>
-      <div className='welcome'>
-        <p className='welcome-text'>Jammming</p>
+    <div className={styles.main}>
+      <div className={styles.welcome}>
+        <p className={styles.welcometext}>Jammming</p>
       </div>
-      <div className='powered-by'>
-        <p className='powered-by-text'>Powered by:</p>
-        <div className='spotify-icon'></div>
+      <div className={styles.poweredby}>
+        <p className={styles.poweredbytext}>Powered by:</p>
+        <div className={styles.icon}></div>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-#search-divider {
+.divider {
     width: calc(100vw - 360px);
     margin-top: 24px;
     border-top: 1px solid #c5c8ba;

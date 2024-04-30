@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './NavItemShowQueue.module.css';
-import NavItem from './NavItem';
+import NavItem from '../NavItem/NavItem';
 import QueueMusicIcon from '@mui/icons-material/QueueMusic';
 
 export default function NavItemShowQueue() {

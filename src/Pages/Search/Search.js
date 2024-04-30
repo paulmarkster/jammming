@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './Search.css';
+import styles from './Search.module.css';
 import SearchBar from './SearchBar';
 import SearchDivider from './SearchDivider';
 import SearchCard from './SearchCard';
-import { getRefreshTokens } from '../spotify/spotifyOAuth';
-import { spotifySearch } from '../spotify/spotifyAPI';
+import { getRefreshTokens } from '../../Spotify/spotifyOAuth';
+import { spotifySearch } from '../../Spotify/spotifyAPI';
 
 export default function Search() {
 
@@ -39,10 +39,10 @@ export default function Search() {
   }, [query, queryResult])
    
   return (
-    <div id='main-content'>
+    <div className={styles.main}>
       <SearchBar setQuery={setQuery} />
       <SearchDivider />
-      <div id='search-container'>
+      <div className={styles.search}>
         {queryResult.map(item => (
           <SearchCard key={item.id} track={item} />
         ))}
