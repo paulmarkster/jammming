@@ -9,13 +9,16 @@ import Queue from './QueueDrawer/Queue'
 
 export default function App() {
 
-  // User state allows the user name to be set on the Welcome page and displayed in the nav drawer.
+  // User state allows the user name to be requested from Spotify via the Welcome page and then displayed in the nav drawer.
   const [user, setUser] = useState('No active user');
+
+  // Queue state determines if the queue drawer should be rendered.
+  const [queue, setQueue] = useState(false);
 
   return (
     <div className={styles.app}>
       <Router>
-        <NavDrawer user={user} />
+        <NavDrawer user={user} queue={queue} setQueue={setQueue}/>
         <Routes>
           <Route 
             exact path='/' 
@@ -30,7 +33,7 @@ export default function App() {
             element={<PlaceholderManager />} 
           />          
         </Routes>
-        <Queue />
+        { queue && <Queue /> }
       </Router>
     </div>
   );
