@@ -16,13 +16,13 @@ export default function Search() {
   useEffect(() => {
 
     // Check to see if a query is available. 
-    // This protects against initiating an empty search request to server on initial component mount.
+    // This protects against initiating an empty search request to the Spotify server on initial component mount.
     if (query) {
 
       // Check to ensure there is a user logged into Spotify.
       if (sessionStorage.getItem('client_id')) {
 
-        // Refresh tokens (only if required) and send search query to Spotify.
+        // Refresh tokens (only if required) and fetch search results from Spotify.
         getRefreshTokens().then(() => {
           spotifySearch(query).then((queryResponse) => {
             setQueryResult(queryResponse.tracks.items);

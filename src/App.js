@@ -1,24 +1,27 @@
-import { React, useState } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import styles from './App.module.css';
 import NavDrawer from './NavDrawer/NavDrawer';
 import Welcome from './Pages/Welcome/Welcome';
 import PlaceholderManager from './Pages/Player/PlaceholderManager';
 import Search from './Pages/Search/Search';
-import Queue from './QueueDrawer/Queue'
+import QueueDrawer from './QueueDrawer/QueueDrawer'
 
 export default function App() {
 
-  // User state allows the user name to be requested from Spotify via the Welcome page and then displayed in the nav drawer.
+  // State to allow the user name to be requested from Spotify via the Welcome page and then displayed in the NavDrawer.
   const [user, setUser] = useState('No active user');
 
-  // Queue state determines if the queue drawer should be rendered.
-  const [queue, setQueue] = useState(false);
+  // State that determines if the QueueDrawer should be rendered.
+  const [showQueue, setShowQueue] = useState(false);
+
+  // State that manages changes to the queue.
+  const [updateQueue, setUpdateQueue] = useState({});
 
   return (
     <div className={styles.app}>
       <Router>
-        <NavDrawer user={user} queue={queue} setQueue={setQueue}/>
+        <NavDrawer user={user} showQueue={showQueue} setShowQueue={setShowQueue}/>
         <Routes>
           <Route 
             exact path='/' 
@@ -26,14 +29,14 @@ export default function App() {
           />
           <Route 
             exact path='AddtoQueue' 
-            element={<Search />} 
+            element={<Search setUpdateQueue={setUpdateQueue} />} 
           />
           <Route 
             exact path='MusicPlayer' 
             element={<PlaceholderManager />} 
           />          
         </Routes>
-        { queue && <Queue /> }
+        { showQueue && <QueueDrawer updateQueue={updateQueue} /> }
       </Router>
     </div>
   );

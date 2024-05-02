@@ -28,7 +28,7 @@ export async function getAuth() {
   const codeChallenge = base64encode(hashed);
   const clientId = sessionStorage.getItem('client_id');
   const redirectUri = 'http://localhost:3000';
-  const scope = 'user-read-private user-read-email';
+  const scope = 'user-read-private user-read-email user-read-currently-playing user-read-playback-state';
   const authUrl = new URL("https://accounts.spotify.com/authorize")
   const params =  {
     response_type: 'code',

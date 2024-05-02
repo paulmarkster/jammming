@@ -9,7 +9,7 @@ import NavDivider from './NavDivider/NavDivider';
 import NavItemLogin from './NavItemLogin/NavItemLogin';
 import NavItemShowQueue from './NavItemShowQueue/NavItemShowQueue';
 
-export default function NavDrawer({user, queue, setQueue}) {   
+export default function NavDrawer({user, showQueue, setShowQueue}) {   
 
     // This state determines background color for the linked page items in the nav drawer.
     const [page, setPage] = useState('Welcome');
@@ -23,7 +23,7 @@ export default function NavDrawer({user, queue, setQueue}) {
                 <Link to='MusicPlayer'><NavItemMusicPlayer page={page} setPage={setPage} /></Link>  
                 <NavDivider />
                 <NavHeader text= 'Appearance' />
-                <NavItemShowQueue queue={queue} setQueue={setQueue}/>
+                <NavItemShowQueue showQueue={showQueue} setShowQueue={setShowQueue}/>
                 <NavDivider />
                 <NavHeader text='Spotify User' />
                 <NavItemLogin user={user} />

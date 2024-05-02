@@ -1,0 +1,14 @@
+.header {
+  height: 56px;
+  width: 100%;
+}
+
+.title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: bolder;
+  color: #44493d;
+  width: fit-content;
+  line-height: 20px;
+  padding: 18px 16px;
+}
