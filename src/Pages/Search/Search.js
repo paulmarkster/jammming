@@ -4,7 +4,7 @@ import SearchBar from './SearchBar';
 import SearchDivider from './SearchDivider';
 import SearchCard from './SearchCard';
 
-export default function Search() {
+export default function Search({queue, setQueue}) {
 
   // State for search results array initially returned by SearchBar, and manipulated later in SearchCard.
   const [query, setQuery] = useState([]);

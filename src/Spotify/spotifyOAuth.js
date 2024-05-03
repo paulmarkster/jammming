@@ -77,11 +77,7 @@ export async function getTokens(code) {
 
 export async function getRefreshTokens() {
 
-  const now = new Date().getTime();
-  const expires = sessionStorage.getItem('expires');
-  const expired = (now >= expires) ? true : false;
-
-  if (expired) {
+  if (new Date().getTime() >= sessionStorage.getItem('expires')) {
     const refreshToken = sessionStorage.getItem('refresh_token');
     const clientId = sessionStorage.getItem('client_id');
     const url = "https://accounts.spotify.com/api/token";

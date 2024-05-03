@@ -9,14 +9,14 @@ import QueueDrawer from './QueueDrawer/QueueDrawer'
 
 export default function App() {
 
-  // State to allow the user name to be requested from Spotify via the Welcome page and then displayed in the NavDrawer.
+  // State for setting user id on Welcome page and rendering on NavDrawer.
   const [user, setUser] = useState('No active user');
 
-  // State that determines if the QueueDrawer should be rendered.
+  // State that requests QueueDrawer to render due to Spotify queue display request on NavDrawer.
   const [showQueue, setShowQueue] = useState(false);
 
-  // State that manages changes to the queue.
-  const [updateQueue, setUpdateQueue] = useState({});
+  // State that requests QueueDrawer to refresh the Spotify queue due to changes made on the Search page.
+  const [updateQueue, setUpdateQueue] = useState(false);
 
   return (
     <div className={styles.app}>
@@ -36,7 +36,7 @@ export default function App() {
             element={<PlaceholderManager />} 
           />          
         </Routes>
-        { showQueue && <QueueDrawer updateQueue={updateQueue} /> }
+        { showQueue && <QueueDrawer updateQueue={updateQueue} setUpdateQueue={setUpdateQueue} /> }
       </Router>
     </div>
   );

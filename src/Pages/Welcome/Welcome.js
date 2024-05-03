@@ -28,7 +28,7 @@ export default function Welcome({setUser}) {
       url.searchParams.delete("code");
       const updatedUrl = url.search ? url.href : url.href.replace('?', '');
       window.history.replaceState({}, '', updatedUrl);
-    }
+    };
   });
 
   return (
