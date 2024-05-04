@@ -3,3 +3,15 @@
     min-height: 100vh;
     flex: none;
 }
+
+.text {
+    height: 56px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: bolder;
+    line-height: 20px;
+    padding-left: 24px;
+    padding-right:  16px;
+    color: #44493d;
+    width: fit-content;
+}
