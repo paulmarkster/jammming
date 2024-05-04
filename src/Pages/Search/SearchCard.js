@@ -3,8 +3,12 @@ import styles from './SearchCard.module.css';
 
 export default function SearchCard({track}) {
 
+  const handleOnClick = () => {
+    
+  };
+
   return (
-    <div className={styles.card}>
+    <div className={styles.card} onClick={handleOnClick}>
         <img className={styles.icon} src={track.album.images[2].url} alt='Album cover' />
         <div className={styles.text}>
           <p>{track.name}</p>

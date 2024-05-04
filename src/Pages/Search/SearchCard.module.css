@@ -5,6 +5,7 @@
     background-color: #e2e3d8;
     margin: 10px;
     display: flex;
+    cursor: pointer;
 }
 
 .icon {

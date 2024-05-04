@@ -30,7 +30,7 @@ export async function getAuth() {
     const clientId = sessionStorage.getItem('client_id');
     const redirectUri = 'http://localhost:3000';
     const scope = 'user-read-private user-read-email user-read-currently-playing user-read-playback-state';
-    const authUrl = new URL("https://accounts.spotify.com/authorize")
+    const authUrl = new URL('https://accounts.spotify.com/authorize')
     const params =  {
       response_type: 'code',
       client_id: clientId,
@@ -77,8 +77,7 @@ export async function getTokens(code) {
     const { access_token, refresh_token, expires_in } = response;
     sessionStorage.setItem('access_token', access_token);
     sessionStorage.setItem('refresh_token', refresh_token);
-    const now = new Date();
-    sessionStorage.setItem('expires', new Date(now.getTime() + (expires_in * 1000)));
+    sessionStorage.setItem('expires', new Date().getTime() + (expires_in * 1000));
 
   } catch (error) {
     console.error(error);
@@ -87,9 +86,11 @@ export async function getTokens(code) {
 
 export async function getRefreshTokens() {
 
+  const time = new Date().getTime();
+  const expiryTime = Number(sessionStorage.getItem('expires'));
+  
   try {
-
-    if (new Date().getTime() >= sessionStorage.getItem('expires')) {
+    if (time >= expiryTime) {
       const refreshToken = sessionStorage.getItem('refresh_token');
       const clientId = sessionStorage.getItem('client_id');
       const url = "https://accounts.spotify.com/api/token";
@@ -112,8 +113,7 @@ export async function getRefreshTokens() {
       const { access_token, refresh_token, expires_in } = response;
       sessionStorage.setItem('access_token', access_token);
       sessionStorage.setItem('refresh_token', refresh_token);
-      const now = new Date();
-      sessionStorage.setItem('expires', new Date(now.getTime() + (expires_in * 1000)));
+      sessionStorage.setItem('expires', new Date().getTime() + (expires_in * 1000));
     }
   
   } catch (error) {

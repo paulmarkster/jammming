@@ -4,9 +4,9 @@
 }
   
 .welcome {
-  height: 100vh;
+  min-height: 100vh;
   background-image: url('./ries-bosch-q1cRvBSvw3M-unsplash.jpg');
-  background-size: cover;
+  background-size: 100% 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
