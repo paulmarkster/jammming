@@ -43,17 +43,32 @@ export async function getUsersQueue() {
   }
 }
 
-export async function addToPlaybackQueue (track) {
+export async function addToPlaybackQueue (trackId) {
 
   try {
     // Add track to playback queue.
     const accessToken = sessionStorage.getItem('access_token');
-    const response = await fetch('https://api.spotify.com/v1/me/player/queue?uri=spotify%3Atrack%3A' + track.id, {
+    const url = 'https://api.spotify.com/v1/me/player/queue?uri=spotify%3Atrack%3A' + trackId;
+    await fetch(url, {
       method: 'POST',
       headers: { 'Authorization': 'Bearer ' + accessToken }
-  });
-    return await response.json();
+    });
   } catch(error) {
     console.log(error);
+  }
+}
+
+export async function getAvailableDevices() {
+
+  try {
+    // Fetch user's play queue.
+    const accessToken = sessionStorage.getItem('access_token'); 
+    const response = await fetch('https://api.spotify.com/v1/me/player/devices', {
+      method: 'GET',
+      headers: { 'Authorization': 'Bearer ' + accessToken }
+    });
+    return await response.json();
+  } catch (error) {
+    console.error(error);
   }
 }

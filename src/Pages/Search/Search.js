@@ -4,7 +4,7 @@ import SearchBar from './SearchBar';
 import SearchDivider from './SearchDivider';
 import SearchCard from './SearchCard';
 
-export default function Search({queue, setQueue}) {
+export default function Search({setUpdateQueue}) {
 
   // State for search results array initially returned by SearchBar, and manipulated later in SearchCard.
   const [query, setQuery] = useState([]);
@@ -15,7 +15,7 @@ export default function Search({queue, setQueue}) {
       <SearchDivider />
       <div className={styles.search}>
         {query.map(item => (
-          <SearchCard key={item.id} track={item} />
+          <SearchCard key={item.id} query={query} setQuery={setQuery} track={item} setUpdateQueue={setUpdateQueue} />
         ))}
       </div>
     </div>
